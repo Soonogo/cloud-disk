@@ -1,10 +1,15 @@
 package logic
 
 import (
+	"bytes"
 	"context"
+	"encoding/json"
+	"fmt"
+	"log"
 
 	"cloud-disk/core/internal/svc"
 	"cloud-disk/core/internal/types"
+	"cloud-disk/core/models"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -25,7 +30,28 @@ func NewCoreLogic(ctx context.Context, svcCtx *svc.ServiceContext) *CoreLogic {
 
 func (l *CoreLogic) Core(req *types.Request) (resp *types.Response, err error) {
 	// todo: add your logic here and delete this line
+
+	data := make([]*models.UserBasic, 0)
+	err = models.Engine.Find(&data)
+	if err != nil {
+		log.Println("GET UserBasic Error:", err)
+	}
+	fmt.Println(data)
+	b, err := json.Marshal(data)
+	if err != nil {
+		log.Println("Marshal Error:", err)
+
+	}
+	dst := new(bytes.Buffer)
+	fmt.Println(dst.String())
+	fmt.Println("---")
+	err = json.Indent(dst, b, "", " ")
+	if err != nil {
+		log.Println("JSON Intent Error:", err)
+
+	}
+	fmt.Println(dst.String())
 	resp = new(types.Response)
-	resp.Message = req.Name
+	resp.Message = dst.String()
 	return
 }
