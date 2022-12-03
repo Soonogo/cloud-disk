@@ -19,3 +19,6 @@ var MailPassword = os.Getenv("MAIL_PD")
 
 // 验证码长度
 var CodeLength = 6
+
+// 验证码过期时间 (s)
+var CodeExpire = 300
