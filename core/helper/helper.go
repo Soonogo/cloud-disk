@@ -23,9 +23,9 @@ func GenerateToken(id int, identity string, name string) (string, error) {
 	// yse
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, uc)
 	fmt.Println(token, "2")
+	fmt.Println("token www", token)
 
 	tokenString, err := token.SignedString([]byte(define.JwtKey))
-
 	if err != nil {
 		return "", err
 
