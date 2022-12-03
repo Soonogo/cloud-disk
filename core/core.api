@@ -8,7 +8,19 @@ service core-api {
 	@handler MailCodeSendRegister
 	post /mail/code/send/register(MailCodeSendRequest)returns(MailCodeSendReply)
 	
+	@handler UserRegister
+	post /user/register(UserRegisterRequest)returns(UserRegisterReply)
+	
 }
+
+type UserRegisterRequest {
+	Name     string `json:"name"`
+	Email    string `json:"email"`
+	Password string `json:"password"`
+	Code     string `json:"code"`
+}
+
+type UserRegisterReply{}
 
 type LoginRequest {
 	Name     string `json:"name"`
