@@ -2,7 +2,6 @@ package test
 
 import (
 	"crypto/tls"
-	"fmt"
 	"log"
 	"net/smtp"
 	"os"

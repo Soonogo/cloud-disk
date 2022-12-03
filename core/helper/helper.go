@@ -6,8 +6,10 @@ import (
 	"crypto/tls"
 	"fmt"
 	"log"
+	"math/rand"
 	"net/smtp"
 	"os"
+	"time"
 
 	"github.com/golang-jwt/jwt/v4"
 	"github.com/joho/godotenv"
@@ -65,4 +67,17 @@ func MailSendCode(mail, code string) error {
 
 	}
 	return nil
+}
+
+func RandCode() string {
+	s := "1234567890"
+	code := ""
+	rand.Seed(time.Now().UnixNano())
+	fmt.Println(time.Now().Format("2006-01-02 15:04:05"), "time")
+	fmt.Println(time.Now().Unix())
+	for i := 0; i < define.CodeLength; i++ {
+
+		code += string(s[rand.Intn(len(s))])
+	}
+	return code
 }

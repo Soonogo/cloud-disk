@@ -5,8 +5,8 @@ service core-api {
 	@handler UserDetail
 	post /user/detail(UserDetailRequest)returns(UserDetailReply)
 	
-	@handler MailCodeSend
-	post /mail/code/send(MailCodeSendRequest)returns(MailCodeSendReply)
+	@handler MailCodeSendRegister
+	post /mail/code/send/register(MailCodeSendRequest)returns(MailCodeSendReply)
 	
 }
 
