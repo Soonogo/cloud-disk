@@ -11,10 +11,17 @@ type LoginReply struct {
 }
 
 type UserDetailRequest struct {
-	Identity string `json:"identity"`
+	Identity string `json:"indetity"`
 }
 
 type UserDetailReply struct {
 	Name  string `json:"name"`
 	Email string `json:"email"`
+}
+
+type MailCodeSendRequest struct {
+	Email string `json:"email"`
+}
+
+type MailCodeSendReply struct {
 }

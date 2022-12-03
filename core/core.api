@@ -3,7 +3,10 @@ service core-api {
 	post /user/login(LoginRequest) returns (LoginReply)
 	
 	@handler UserDetail
-	get /user/detail(UserDetailRequest)returns(UserDetailReply)
+	post /user/detail(UserDetailRequest)returns(UserDetailReply)
+	
+	@handler MailCodeSend
+	post /mail/code/send(MailCodeSendRequest)returns(MailCodeSendReply)
 	
 }
 
@@ -23,4 +26,11 @@ type UserDetailRequest {
 type UserDetailReply {
 	Name  string `json:"name"`
 	Email string `json:"email"`
+}
+
+type MailCodeSendRequest {
+	Email string `json:"email"`
+}
+
+type MailCodeSendReply {
 }
