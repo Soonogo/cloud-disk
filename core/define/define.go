@@ -22,3 +22,5 @@ var CodeLength = 6
 
 // 验证码过期时间 (s)
 var CodeExpire = 300
+
+var CosBucket = "https://1-1307884296.cos.ap-shanghai.myqcloud.com"

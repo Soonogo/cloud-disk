@@ -19,10 +19,14 @@ func TestSendMail(t *testing.T) {
 	}
 
 	e := email.NewEmail()
+
 	e.From = "Jordan Wright <tttsongen@foxmail.com>"
+
 	e.To = []string{"tttsongen@qq.com"}
+
 	//抄送
 	// e.Bcc = []string{"test_bcc@example.com"}
+
 	// e.Cc = []string{"test_cc@example.com"}
 	e.Subject = "Send Mail Test Subject"
 	e.Text = []byte("Text Body is, of course, supported!")
