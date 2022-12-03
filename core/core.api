@@ -32,7 +32,7 @@ type LoginReply {
 }
 
 type UserDetailRequest {
-	Identity string `json:"indetity"`
+	Identity string `json:"identity"`
 }
 
 type UserDetailReply {

@@ -1,3 +1,9 @@
 Name: core-api
 Host: 0.0.0.0
 Port: 8888
+
+Mysql:
+  DataSource: "root:123456@tcp(127.0.0.1:3306)/cloud-disk?charset=utf8mb4"  
+
+Redis:
+  Addr: "127.0.0.1:6379"
