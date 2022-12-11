@@ -24,3 +24,8 @@ var CodeLength = 6
 var CodeExpire = 300
 
 var CosBucket = "https://1-1307884296.cos.ap-shanghai.myqcloud.com"
+
+// PageSize 分页的默认参数
+var PageSize = 20
+
+var Datetime = "2006-01-02 15:04:05"
